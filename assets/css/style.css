@@ -145,7 +145,7 @@ h6 {
 
 @media (min-width: 991px) {
   #main {
-    margin-left: 100px;
+    /* margin-left: 100px; */
   }
 }
 
@@ -653,6 +653,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90%;
 }
 
 .portfolio .portfolio-wrap .portfolio-info::before {
@@ -736,6 +737,19 @@ section {
   right: 15px;
 }
 
+@media screen and (min-width: 1024px) {
+  .portfolio-details .portfolio-info {
+      /* position: fixed; */
+      height:90%
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+      display: flex;
+      flex-direction: column-reverse;
+  }
+}
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -1213,4 +1227,24 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+.slideImg {
+  /* height: 600px; */
+   width:90%;
+  /* height:80%;  */
+  overflow-y: scroll;
+}
+
+.slideDiv {
+  overflow: auto;
+  /* height:80%;  */
+}
+
+.carousel-control-prev {
+  left: -75px; 
+}
+
+.carousel-control-next {
+  right: -75px; 
 }

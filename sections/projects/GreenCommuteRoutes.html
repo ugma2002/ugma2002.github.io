@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -37,18 +38,8 @@
         <section id="portfolio-details" class="portfolio-details">
             <div class="container">
 
-                <div class="row gy-4">
-
-                    <div class="col-lg-8">
-                        <div class="portfolio-details-slider swiper">
-                            <div class="swiper-wrapper align-items-center" id="imageSlider">
-
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
+                <div class="col gy-4">
+                    <div class="row" style="height: 90%;">
                         <div class="portfolio-info">
                             <h3>Project information</h3>
                             <ul>
@@ -73,6 +64,28 @@
                             </p>
                         </div>
                     </div>
+                    <div class="row">
+
+                        <div id="carouselExampleControls"
+                            class="carousel  carousel-dark slide portfolio-details-slider swiper"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner swiper-wrapper align-items-center" id="imageSlider">
+
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </section>
@@ -99,36 +112,36 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const imageFolder = '../../assets/projects/green-commute-routes/';
-            const imageFiles = [
-                "PHOTO-2023-11-20-11-30-40_1.jpg",
-                "PHOTO-2023-11-20-11-30-40_2.jpg",
-                "PHOTO-2023-11-20-11-30-40_3.jpg",
-                "PHOTO-2023-11-20-11-30-40_4.jpg",
-                "PHOTO-2023-11-20-11-30-40_5.jpg",
-                "PHOTO-2023-11-20-11-30-40.jpg",
-                "PHOTO-2023-11-20-11-30-41_1.jpg",
-                "PHOTO-2023-11-20-11-30-41_2.jpg",
-                "PHOTO-2023-11-20-11-30-41_3.jpg",
-                "PHOTO-2023-11-20-11-30-41_4.jpg",
-                "PHOTO-2023-11-20-11-30-41_5.jpg",
-                "PHOTO-2023-11-20-11-30-41_6.jpg",
-                "PHOTO-2023-11-20-11-30-41.jpg",
-                "PHOTO-2023-11-20-11-30-42_1.jpg",
-                "PHOTO-2023-11-20-11-30-42_2.jpg",
-                "PHOTO-2023-11-20-11-30-42.jpg"
-            ];
 
+            const folderName = 'green-commute-routes';
+
+            // change below properties
+
+            const imageFolder = `../../assets/projects/${folderName}/`;
+            const imagesCount = 10;
+            const extension = ".jpg";
+
+            // change above properties
+
+            let imageFiles = [];
+
+            for (let i = 1; i <= imagesCount; i++) {
+                imageFiles.push("image" + i + extension);
+            }
 
             const sliderContainer = document.getElementById('imageSlider');
 
-            imageFiles.forEach(file => {
+            imageFiles.forEach((file, index) => {
                 const slide = document.createElement('div');
-                slide.className = 'swiper-slide';
+                // slide.className = 'carousel-item active slideDiv';
+                slide.className = index === 0 ? 'carousel-item active slideDiv' : 'carousel-item slideDiv';
+
 
                 const img = document.createElement('img');
                 img.src = imageFolder + file;
                 img.alt = '';
+
+                img.className = 'd-block w-100 slideImg';
 
                 slide.appendChild(img);
                 sliderContainer.appendChild(slide);

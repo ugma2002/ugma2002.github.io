@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Portfolio Details - Personal Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../../assets/img/favicon.png" rel="icon">
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main id="main">
+
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+
+                <div class="col gy-4">
+
+                    <div class="row" style="height:90%">
+                        <div class="portfolio-info">
+                            <h3>Project information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: Green Commute Routes</li>
+                                <li><strong>Project date</strong>: Fall 2021</li>
+                                <li><strong>Github URL</strong>: <a target="_blank"
+                                        href="https://github.com/sanath1515/GreenCommuteRoutes#readme">Code Link</a>
+                                </li>
+                                <li><strong>Live URL</strong>: <a target="_blank"
+                                        href="https://sanath-green-commute-routes.vercel.app/">Deployed Link</a></li>
+                            </ul>
+                            <h3>Green Commute Routes</h3>
+                            <p align="justify">
+                                Green Commute is a cutting-edge platform that revolutionizes the traditional job search
+                                experience, combining the functionality
+                                of renowned job suggestion websites like LinkedIn, Naukri, and Indeed with a unique
+                                eco-conscious twist.
+                                This innovative project stands out by offering an additional feature - the provision of
+                                'Green Commute Routes'. These routes are carefully selected based on
+                                lower Air Quality Index (AQI) levels, ensuring a healthier and more environmentally
+                                friendly journey to work.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div id="carouselExampleControls"
+                            class="carousel  carousel-dark slide portfolio-details-slider swiper"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner swiper-wrapper align-items-center" id="imageSlider">
+
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../../assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="../../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../../assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const folderName = 'chat-application';
+
+            // change below properties
+
+            const imageFolder = `../../assets/projects/${folderName}/`;
+            const imagesCount = 6;
+            const extension = ".png";
+
+            // change above properties
+
+            let imageFiles = [];
+
+            for (let i = 1; i <= imagesCount; i++) {
+                imageFiles.push("image" + i + extension)
+            }
+
+            const sliderContainer = document.getElementById('imageSlider');
+
+            imageFiles.forEach((file,index) => {
+                const slide = document.createElement('div');
+                slide.className = index === 0 ? 'carousel-item active slideDiv' : 'carousel-item slideDiv';
+
+                const img = document.createElement('img');
+                img.src = imageFolder + file;
+                img.alt = '';
+
+                img.className = 'd-block w-100 slideImg';
+
+                slide.appendChild(img);
+                sliderContainer.appendChild(slide);
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
